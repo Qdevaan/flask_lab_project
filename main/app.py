@@ -1,3 +1,24 @@
+
+from flask import Flask, request, jsonify, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/health')
+def health():
+    return "OK", 200
+
+@app.route('/data', methods=['POST'])
+def data():
+    data = request.get_json()
+    return jsonify({"received": data}), 201
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
 from flask import Flask, request, jsonify
 
 # Initialize the Flask application
@@ -58,3 +79,4 @@ def handle_data():
 # as it makes the app accessible from outside the container.
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
+
