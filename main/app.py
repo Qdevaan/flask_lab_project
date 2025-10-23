@@ -33,7 +33,7 @@ def home():
     """
     Serves the homepage.
     """
-    return "Welcome to the Collaborative Flask Lab Project!", 200
+    return "Welcome to the Lab Task", 200
 
 # --- 2. Health Check Route ---
 # This route is used by monitoring services (and our unit tests)
