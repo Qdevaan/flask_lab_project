@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flask Frontend</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Welcome to the Flask Lab Project!</h1>
+  <form id="dataForm">
+    <input type="text" id="inputData" placeholder="Enter some data">
+    <button type="submit">Send</button>
+  </form>
+  <p id="response"></p>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
